@@ -1,0 +1,5 @@
+GamePacket p3 = packetEnd(appendIntx(appendIntx(appendIntx(appendIntx(appendIntx(appendIntx(appendString(createPacket(), "OnRiftCape"), 1523), 1347440895), 1162167807), 1347440895), 1162167807), 5));
+            memcpy(p3.data + 8, &(((PlayerInfo)(peer->data))->netID), 4);
+            ENetPacket packet2 = enet_packet_create(p3.data, p3.len, ENET_PACKET_FLAG_RELIABLE);
+            enet_peer_send(currentPeer, 0, packet2);
+            delete p3.data;
